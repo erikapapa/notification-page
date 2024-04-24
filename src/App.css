@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans');
+
+.App {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: hsl(210, 60%, 98%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-notif {
+  background-color: hsl(211, 68%, 94%);
+  /* background-color:  rgb(250, 224, 202); */
+}
