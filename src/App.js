@@ -6,12 +6,9 @@ import { DetailsContainer } from './components/DetailsContainer';
 import './App.css';
 
 const MainContainer = styled.div({
-  // display: 'flex',
-
   width: '50vw',
-
-  background: 'rgb(250, 224, 202)',
-
+  background: 'white',
+  boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
   padding: '30px',
   marginTop: '20px',
   marginBottom: '20px',
@@ -21,7 +18,6 @@ const MainContainer = styled.div({
 
 const HeaderContainer = styled.div({
   display: 'flex',
-  // background: 'yellow',
   marginBottom: '20px',
   justifyContent: 'space-between'
 })

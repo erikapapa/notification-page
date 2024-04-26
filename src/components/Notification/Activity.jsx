@@ -43,7 +43,7 @@ const ActiveNotif = styled.div({
 
 export const Activity = ({ activity, name, isNew }) => {
 
-    const { text, link, message } = activity;
+    const { text, link } = activity;
 
     return (
         <React.Fragment>

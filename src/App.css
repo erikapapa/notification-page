@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans');
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  /* box-sizing: inherit; */
+  box-sizing: content-box;
+}
+
 .App {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: hsl(210, 60%, 98%);
@@ -10,5 +18,10 @@
 
 .new-notif {
   background-color: hsl(211, 68%, 94%);
-  /* background-color:  rgb(250, 224, 202); */
+}
+
+@media only screen and (max-width: 1000px) {
+  .App > div:first-child {
+    width: 100%
+  }
 }
