@@ -1,11 +1,20 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Image } from "./Image"
 import { Activity } from "./Activity"
-import { TimePeriod } from "./TimePeriod"
-
 import '../../App.css';
+
+const Picture = styled.img({
+    width: '50px',
+    height: '50px',
+    borderRadius: '20px',
+})
+
+const TimePeriod = styled.div({
+    color: 'hsl(219, 14%, 63%)',
+    fontSize: '16px',
+    marginLeft: '15px'
+})
 
 
 const DetailedView = styled.div({
@@ -26,17 +35,17 @@ const Message = styled.div({
     borderRadius: '5px'
 })
 
+
+
 export const Notification = ({ data }) => {
     const { isNew, avatar, name, activity, timePeriod, message } = data;
 
-    console.log("data", data, avatar)
-
-
+    const image = require(`../../assets/${avatar}.webp`)
     return (
         <div>
 
             <DetailedView className={isNew ? 'new-notif' : ''}>
-                <Image imgSrc={avatar} alt={name} />
+                <Picture src={image} alt={`${name} image`}></Picture>
 
                 <SubContainer>
                     <Activity

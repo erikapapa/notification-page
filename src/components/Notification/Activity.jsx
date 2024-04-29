@@ -1,22 +1,20 @@
 import React from "react"
 import styled from "styled-components"
 
-
 const Container = styled.div({
     fontSize: '16px',
     display: 'flex',
-
+    marginLeft: '15px'
 })
 
-const NameLabel = styled.div({
+const NameLabel = styled.span({
     color: 'black',
     fontSize: '16px',
     fontWeight: 'bolder',
     marginRight: '5px',
-    marginLeft: '15px'
 })
 
-const Text = styled.div({
+const Text = styled.span({
     color: 'hsl(219, 14%, 63%)',
     fontWeight: '800',
     marginRight: '5px',
@@ -29,7 +27,6 @@ const Link = styled.a({
     marginRight: '10px',
     textDecoration: 'none',
 })
-
 
 
 const ActiveNotif = styled.div({
@@ -46,14 +43,17 @@ export const Activity = ({ activity, name, isNew }) => {
     const { text, link } = activity;
 
     return (
-        <React.Fragment>
-            <Container>
-                <NameLabel>{name}</NameLabel>
-                <Text>{text}</Text>
+        <>
+            <Container className="activityContainer">
+                <div>
+                    <NameLabel>{name}</NameLabel>
+                    <Text>{text}</Text>
 
-                {
-                    link ? <Link href="https://google.com"> {link} </Link> : null
-                }
+                    {
+                        link ? <Link href="https://google.com"> {link} </Link> : null
+                    }
+                </div>
+
 
                 {
                     isNew ? <ActiveNotif /> : null
@@ -61,9 +61,9 @@ export const Activity = ({ activity, name, isNew }) => {
 
 
             </Container>
-            
 
-        </React.Fragment>
+
+        </>
 
     )
 }

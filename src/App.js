@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import styled from 'styled-components';
 
 import { DetailsContainer } from './components/DetailsContainer';
@@ -44,7 +44,6 @@ const Unread = styled.div({
 })
 
 const MarkRead = styled.div({
-  // justifyContent: 'flex-end',
   alignSelf: 'center',
   color: 'hsl(219, 14%, 63%)',
 })
