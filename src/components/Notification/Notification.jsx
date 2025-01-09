@@ -29,11 +29,22 @@ const SubContainer = styled.div({
 })
 
 const Message = styled.div({
-    border: '1px solid hsl(219, 12%, 42%)',
+    border: '1px solid hsl(219, 14%, 63%)',
     padding: '15px 20px',
     margin: '20px 10px 0 15px',
-    borderRadius: '5px'
+    borderRadius: '5px',
+    color: 'hsl(219, 14%, 63%)',
 })
+
+
+const StyledMessage = styled(Message)`
+    &:hover {
+        background: hsl(211, 68%, 94%);
+        cursor: pointer;
+        color: hsl(224, 21%, 14%);
+        border: 1px solid hsl(211, 68%, 94%);
+    }
+`
 
 
 
@@ -59,7 +70,7 @@ export const Notification = ({ data }) => {
                     </TimePeriod>
 
                     {
-                        message ? <Message> {message} </Message> : null
+                        message ? <StyledMessage> {message} </StyledMessage> : null
                     }
                 </SubContainer>
 

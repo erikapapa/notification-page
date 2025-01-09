@@ -1,7 +1,8 @@
-import React  from 'react';
+import React, { useState }  from 'react';
 import styled from 'styled-components';
 
 import { DetailsContainer } from './components/DetailsContainer';
+import { data } from './utils/data';
 
 import './App.css';
 
@@ -43,25 +44,51 @@ const Unread = styled.div({
   marginLeft: '10px',
 })
 
-const MarkRead = styled.div({
+const Btn = styled.button({
   alignSelf: 'center',
   color: 'hsl(219, 14%, 63%)',
+  textDecoration: 0,
+  background: 'none',
+  border: 'transparent',
+  fontSize: '14px'
 })
 
-function App() {
+const MarkRead = styled(Btn)`
+  &:hover {
+    font-weight: bold;
+    cursor: pointer;
+  }
+`;
+
+const App = () => {
+  const [notifsData, setNotifData] = useState(data);
+  const [hasNewNotifs, setHasNewNotifs] = useState(true);
+
+  const updateNotifications = () => {
+    const tempArray = data.map(item =>
+      item.isNew ? { ...item, isNew: false }: item
+    );
+
+    setNotifData(tempArray);
+    setHasNewNotifs(false);
+  }
+
   return (
     <div className="App">
       <MainContainer>
         <HeaderContainer>
           <SubContainer>
             <Header>Notifications</Header>
-            <Unread> 3 </Unread>
+            {
+              hasNewNotifs ? <Unread> 3 </Unread> : null
+            }
+            
           </SubContainer>
 
-          <MarkRead>Mark all as read</MarkRead>
+          <MarkRead type="button" onClick={updateNotifications}>Mark all as read</MarkRead>
         </HeaderContainer>
 
-        <DetailsContainer/>
+        <DetailsContainer data={notifsData}/>
 
       </MainContainer>
 

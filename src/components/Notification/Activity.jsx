@@ -28,6 +28,12 @@ const Link = styled.a({
     textDecoration: 'none',
 })
 
+const StyledLink = styled(Link)`
+    &:hover {
+        color: blue;
+        cursor: pointer;
+    }
+`
 
 const ActiveNotif = styled.div({
     background: 'hsl(1, 90%, 64%)',
@@ -50,7 +56,7 @@ export const Activity = ({ activity, name, isNew }) => {
                     <Text>{text}</Text>
 
                     {
-                        link ? <Link href="https://google.com"> {link} </Link> : null
+                        link ? <StyledLink href="https://google.com"> {link} </StyledLink> : null
                     }
                 </div>
 

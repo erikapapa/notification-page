@@ -34,7 +34,7 @@ export const data = [
         activity: {
             text: 'sent you a private message',
         },
-        message: `Hello, thanks for settiung up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.`,
+        message: `Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.`,
         timePeriod: '5 days',
         avatar: 'avatar-rizky-hasanuddin'
     },
